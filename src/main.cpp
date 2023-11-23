@@ -123,8 +123,7 @@ void ChangementMode(void) {
   bluetooth.println("== Entrez un mode de contrôle ==");
   bluetooth.println("Les modes valides sont le suivants :");
   bluetooth.println("MANUEL - Permet l'exécution du mode de pilotage manuel");
-  bluetooth.println("PROGRAMME - Permet l'exécution d'un programme de ronde enregistré dans la mémoire");
-  bluetooth.println("PROGRAMMATION - Permet l'ajout d'un nouveau programme de ronde");
+  bluetooth.println("PROGRAMME - Permet l'exécution du programme de ronde");
   bluetooth.println("Entrez un mode :");
   // Tant que l'on ne reçoit rien, on ne fait rien
 ATTENTE_COMMANDE:
