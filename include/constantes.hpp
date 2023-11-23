@@ -27,8 +27,18 @@
 // Pins relatifs aux DELs d'affichage de la vitesse
 #define DEL_1 12
 #define DEL_2 13
+#define DEL_INF 9
 
 // Constantes liées aux chenilles et roues
 #define DIAMETRE_ROUE 57
 #define NOMBRE_DENTS 18
 
+// Commandes mode manuel
+#define ACCELERATION_MOTEUR_1 "M1A"
+#define ACCELERATION_MOTEUR_2 "M2A"
+
+#define DECELERATION_MOTEUR_1 "M1D"
+#define DECELERATION_MOTEUR_2 "M2D"
+
+#define ACCELERATION_GLOBALE "MGA"
+#define DECELERATION_GLOBALE "MGD"

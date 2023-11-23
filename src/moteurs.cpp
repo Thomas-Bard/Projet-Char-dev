@@ -31,7 +31,7 @@ bool Moteur::AccelerationRampe(float vitesse, int temps) {
     if (vitesse <= this->_last_speed) return false;
     
     size_t temps_initie = millis();
-    size_t temps_fin = temps*1000 + temps_initie;
+    size_t temps_fin = temps + temps_initie;
     
     while (this->_last_speed != vitesse && millis() != temps_fin && this->_valeur_sortie < 255) {
         this->_valeur_sortie++;
@@ -45,7 +45,7 @@ bool Moteur::DecelerationRampe(float vitesse, int temps) {
     if (vitesse >= this->_last_speed) return false;
     
     size_t temps_initie = millis();
-    size_t temps_fin = temps*1000 + temps_initie;
+    size_t temps_fin = temps + temps_initie;
     
     while (this->_last_speed != vitesse && millis() != temps_fin && this->_valeur_sortie < 255) {
         this->_valeur_sortie--;
@@ -57,4 +57,26 @@ bool Moteur::DecelerationRampe(float vitesse, int temps) {
 
 void Moteur::SortieBrute(uint8_t valeur) {
     analogWrite(this->_pwm_pin, valeur);
+}
+
+bool Moteur::AccelerationRampeBrute(uint8_t valeur, int temps) {
+    if (this->_valeur_sortie >= valeur) return false;
+    size_t temps_actuel = millis();
+    while (this->_valeur_sortie < valeur && temps_actuel + temps < millis()) {
+        this->_valeur_sortie++;
+        analogWrite(this->_pwm_pin, this->_valeur_sortie);
+        delay(temps / valeur);
+    }
+    return this->_valeur_sortie == valeur;
+}
+
+bool Moteur::DecelerationRampeBrute(uint8_t valeur, int temps) {
+    if (this->_valeur_sortie >= valeur) return false;
+    size_t temps_actuel = millis();
+    while (this->_valeur_sortie < valeur && temps_actuel + temps < millis() && this->_valeur_sortie != 0) {
+        this->_valeur_sortie--;
+        analogWrite(this->_pwm_pin, this->_valeur_sortie);
+        delay(temps / valeur);
+    }
+    return this->_valeur_sortie == valeur;
 }

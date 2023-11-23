@@ -31,6 +31,11 @@ public:
     // @warning Provoque une accélération instantanée, de ce fait les chenilles peuvent patiner
     void SortieBrute(uint8_t valeur);
 
+    // Accélère en un temps max donné le moteur, réglage par valeur brute PWM
+    bool AccelerationRampeBrute(uint8_t valeur, int temps);
+
+    // Décélère en un temps max donné le moteur, réglage par valeur brute PWM
+    bool DecelerationRampeBrute(uint8_t valeur, int temps);
     friend class Capteur;
 private:
     int _dc_pin;
