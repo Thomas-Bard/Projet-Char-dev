@@ -9,17 +9,6 @@ class Moteur
 {
 public:
     Moteur(TypeMoteur);
-    // Procède à l'accélération jusqu'une certaine vitesse
-    // @param vitesse Vitesse à atteindre
-    // @param temps Temps d'accélération
-    // @return true si la vitesse a pu être atteinte en temps voulu, false sinon
-    bool AccelerationRampe(float, int);
-
-    //Procède à une décélération jusqu'à une certaine vitesse
-    // @param vitesse Vitesse à atteindre
-    // @param temps Temps de décélération
-    // @return true si la vitesse a pu être atteinte, false sinon
-    bool DecelerationRampe(float, int);
 
     void DefinirControlDirection(bool etat = true) { digitalWrite(this->_dc_pin, 1); }
 

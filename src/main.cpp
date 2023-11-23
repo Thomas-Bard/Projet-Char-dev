@@ -96,13 +96,13 @@ void ControleManuel(void) {
       }
       // Décélération du moteur 1 au minimum en 1500ms
       if (commande == DECELERATION_MOTEUR_1) {
-        INTERRUPTIONS::moteur_1.DecelerationRampe(0, 1500);
+        INTERRUPTIONS::moteur_1.DecelerationRampeBrute(0, 1500);
         bluetooth.flush();
         continue;
       }
       // Décélération du moteur 2 au minimum en 1500ms
       if (commande == DECELERATION_MOTEUR_2) {
-        INTERRUPTIONS::moteur_2.DecelerationRampe(0, 1500);
+        INTERRUPTIONS::moteur_2.DecelerationRampeBrute(0, 1500);
         bluetooth.flush();
         continue;
       }
