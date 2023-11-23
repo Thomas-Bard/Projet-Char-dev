@@ -159,5 +159,6 @@ void ExecutionProgramme(void) {
     INTERRUPTIONS::moteur_2.AccelerationRampeBrute(255, 1500);
     delay(1000);
   }
+  bluetooth.flush();
   ChangementMode();
 }
