@@ -1,7 +1,8 @@
 #include "moteurs.hpp"
 
-Moteur::Moteur(TypeMoteur type_moteur, Capteur* capteur) {
+Moteur::Moteur(TypeMoteur type_moteur) {
     this->_type_moteur = type_moteur;
+    
     switch (type_moteur)
     {
     case MOTEUR_1:
@@ -18,8 +19,6 @@ Moteur::Moteur(TypeMoteur type_moteur, Capteur* capteur) {
         break;
         break;
     }
-    this->_capteur_associe = capteur;
-    this->_capteur_associe->DefinirMoteur(this);
     pinMode(this->_dc_pin, OUTPUT);
     pinMode(this->_pwm_pin, OUTPUT);
     this->_valeur_sortie = 0;

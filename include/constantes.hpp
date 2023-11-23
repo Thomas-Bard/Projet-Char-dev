@@ -2,6 +2,8 @@
 
 #include <Arduino.h>
 #include <SoftwareSerial.h>
+// Bibliothèque permettant l'enregistrement de données sur la mémoire permanente de l'Arduino
+#include <EEPROM.h>
 
 // Fichier contenant les macros et constantes ainsi que les fichiers includes nécessaires
 
@@ -33,6 +35,9 @@
 #define DIAMETRE_ROUE 57
 #define NOMBRE_DENTS 18
 
+// Commandes globales
+#define CHANGER_MODE "CHG"
+
 // Commandes mode manuel
 #define ACCELERATION_MOTEUR_1 "M1A"
 #define ACCELERATION_MOTEUR_2 "M2A"
@@ -42,3 +47,8 @@
 
 #define ACCELERATION_GLOBALE "MGA"
 #define DECELERATION_GLOBALE "MGD"
+
+
+// Commandes pour le changement de mode
+#define COMMANDE_MODE_MANUEL "MANUEL"
+#define COMMANDE_MODE_PROGRAMME "PROGRAMME"

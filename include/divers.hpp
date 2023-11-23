@@ -4,3 +4,4 @@
 namespace CONTROLE {
     enum Mode {MANUEL, PROGRAMMATION, EXECUTION};
 }
+
