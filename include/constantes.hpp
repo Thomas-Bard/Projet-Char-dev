@@ -2,8 +2,7 @@
 
 #include <Arduino.h>
 #include <SoftwareSerial.h>
-// Bibliothèque permettant l'enregistrement de données sur la mémoire permanente de l'Arduino
-#include <EEPROM.h>
+
 
 // Fichier contenant les macros et constantes ainsi que les fichiers includes nécessaires
 
